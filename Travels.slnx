@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/others/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+  </Folder>
+  <Folder Name="/Server/">
+    <Project Path="Travels.BLL/Travels.BLL.csproj" />
+  </Folder>
+</Solution>
