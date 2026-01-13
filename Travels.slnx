@@ -7,4 +7,5 @@
   <Folder Name="/Server/">
     <Project Path="Travels.BLL/Travels.BLL.csproj" />
   </Folder>
+  <Project Path="Travels.Models/Travels.Models.csproj" />
 </Solution>
