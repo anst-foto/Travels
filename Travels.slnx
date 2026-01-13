@@ -6,6 +6,7 @@
   </Folder>
   <Folder Name="/Server/">
     <Project Path="Travels.BLL/Travels.BLL.csproj" />
+    <Project Path="Travels.DAL/Travels.DAL.csproj" />
   </Folder>
   <Project Path="Travels.Models/Travels.Models.csproj" />
 </Solution>

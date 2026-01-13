@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Travels.DAL\Travels.DAL.csproj" />
       <ProjectReference Include="..\Travels.Models\Travels.Models.csproj" />
     </ItemGroup>
 
