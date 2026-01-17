@@ -7,6 +7,11 @@ namespace Travels.DAL;
 
 public class PointRepositoryPostgres : IPointRepository
 {
+    public PointRepositoryPostgres(string connectionString)
+    {
+
+    }
+
     public IAsyncEnumerable<Point> GetPointsAsync()
     {
         throw new NotImplementedException();

@@ -1,12 +1,15 @@
 <Solution>
   <Folder Name="/others/">
     <File Path=".editorconfig" />
+    <File Path=".env" />
     <File Path=".gitattributes" />
     <File Path=".gitignore" />
+    <File Path="docker_compose.yaml" />
   </Folder>
   <Folder Name="/Server/">
     <Project Path="Travels.BLL/Travels.BLL.csproj" />
     <Project Path="Travels.DAL/Travels.DAL.csproj" />
+    <Project Path="Travels.WebApi/Travels.WebApi.csproj" />
   </Folder>
   <Project Path="Travels.Models/Travels.Models.csproj" />
 </Solution>

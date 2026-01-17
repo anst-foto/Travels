@@ -11,5 +11,4 @@ public interface IPointWorker
     public Task<Point?> GetPointByIdAsync(Guid id);
     public Task AddPointAsync(Point point);
     public Task UpdatePointAsync(Point point);
-    public Task DeletePointAsync(Guid id);
 }
