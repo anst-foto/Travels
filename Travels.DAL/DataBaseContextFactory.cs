@@ -20,4 +20,12 @@ public class DataBaseContextFactory : IDesignTimeDbContextFactory<DataBaseContex
 
         return new DataBaseContext(options);
     }
+
+    public static DataBaseContext CreateDbContext(string connectionString)
+    {
+        var optionsBuilder = new DbContextOptionsBuilder<DataBaseContext>();
+        var options = optionsBuilder.UseNpgsql(connectionString).Options;
+
+        return new DataBaseContext(options);
+    }
 }

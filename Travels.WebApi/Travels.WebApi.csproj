@@ -8,6 +8,11 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Travels.BLL\Travels.BLL.csproj" />
+      <ProjectReference Include="..\Travels.Models\Travels.Models.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="appsettings.json" />
     </ItemGroup>
 
 </Project>

@@ -1,6 +1,39 @@
-@Travels.WebApi_HostAddress = http://localhost:5177
+@base_url = http://localhost:5177
+@id = FC1CA5EC-067E-47A0-9B2D-46E1D4DD30E4
 
-GET {{Travels.WebApi_HostAddress}}/weatherforecast/
+###
+GET {{base_url}}/api/v1/points
 Accept: application/json
 
 ###
+
+POST {{base_url}}/api/v1/points
+Content-Type: application/json
+
+{
+  "id": "FC1CA5EC-067E-47A0-9B2D-46E1D4DD30E4",
+  "name": "Test1",
+  "description": "description",
+  "country": "Russia"
+}
+
+###
+
+GET {{base_url}}/api/v1/points/{{id}}
+Accept: application/json
+
+###
+
+PUT {{base_url}}/api/v1/points/{{id}}
+Content-Type: application/json
+
+{
+  "id": "FC1CA5EC-067E-47A0-9B2D-46E1D4DD30E4",
+  "name": "Test_1",
+  "description": "description",
+  "country": "Russia"
+}
+
+###
+
+DELETE {{base_url}}/api/v1/points/{{id}}
