@@ -11,7 +11,7 @@ public class DataBaseContextFactory : IDesignTimeDbContextFactory<DataBaseContex
     {
         var connectionString = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
+            .AddJsonFile("appsettings.Migrations.json")
             .Build()
             .GetConnectionString("Test");
 
