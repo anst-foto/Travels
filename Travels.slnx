@@ -1,9 +1,11 @@
 <Solution>
   <Folder Name="/others/">
+    <File Path=".dockerignore" />
     <File Path=".editorconfig" />
     <File Path=".env" />
     <File Path=".gitattributes" />
     <File Path=".gitignore" />
+    <File Path="Dockerfile" />
     <File Path="docker_compose.yaml" />
   </Folder>
   <Folder Name="/Server/">

@@ -1,4 +1,27 @@
 services:
+  webapi:
+    container_name: ${PREFIX}_webapi_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${WEBAPI_PORT_HOST}:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=${POSTGRES_PORT_CONTAINER};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+    networks:
+      - postgres
+    depends_on:
+      postgres:
+        condition: service_healthy
+        restart: true
+
   postgres:
     container_name: ${PREFIX}_postgres_container
     image: postgres:${POSTGRES_VERSION}

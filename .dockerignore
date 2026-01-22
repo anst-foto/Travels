@@ -1,0 +1,41 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Visual Studio / Rider
+.vs
+.vscode
+.idea
+**/.vs
+**/.vscode
+**/.idea
+*.user
+*.suo
+*.cache
+
+# Build results
+**/bin
+**/obj
+**/dist
+
+# Docker files
+.dockerignore
+Dockerfile*
+docker-compose*.yaml
+docker_compose.yaml
+
+# Environment files
+.env
+.env.local
+.env.*.local
+**/.env
+
+# Documentation
+README.md
+LICENSE
+*.md
+
+# Other
+.DS_Store
+**/.DS_Store
