@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Client/">
+    <Project Path="Travels.Desktop/Travels.Desktop.csproj" />
+  </Folder>
   <Folder Name="/others/">
     <File Path=".dockerignore" />
     <File Path=".editorconfig" />

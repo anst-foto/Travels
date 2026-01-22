@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Travels.Desktop.ViewModels"
+        xmlns:m="using:Travels.Models"
+        xmlns:c="using:Travels.Desktop.Components"
+
+        x:Class="Travels.Desktop.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Travels.Desktop">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Window.Resources>
+        <DataTemplate x:Key="TemplatePoint"
+                      DataType="{x:Type TypeName=m:Point}">
+            <TextBlock>
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="#{0}: {1}">
+                        <Binding Path="ShortId"/>
+                        <Binding Path="Name"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+        </DataTemplate>
+    </Window.Resources>
+
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Загрузить с БД"/>
+        </Menu>
+
+        <Grid ColumnDefinitions="*, 3*">
+            <ListBox ItemsSource="{Binding Path=Points}"
+                     SelectedItem="{Binding Path=SelectedPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     ItemTemplate="{StaticResource ResourceKey=TemplatePoint}"
+                     Grid.Column="0"/>
+
+            <StackPanel Orientation="Vertical"
+                        Grid.Column="1">
+                <c:InputComponent Label="ID"
+                                  Value="{Binding Path=Id}"/>
+                <c:InputComponent Label="Имя"
+                                  Value="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <c:InputComponent Label="Описание"
+                                  Value="{Binding Path=Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <c:InputComponent Label="Страна"
+                                  Value="{Binding Path=Country, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Удалено?"
+                           Target="{Binding ElementName=CheckDeleted}"/>
+                    <CheckBox x:Name="CheckDeleted"
+                              IsChecked="{Binding Path=IsDeleted, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

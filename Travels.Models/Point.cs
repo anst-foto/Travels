@@ -9,4 +9,6 @@ public record Point
     public required string Description { get; init; }
     public required string Country { get; init; }
     public bool IsDeleted { get; init; } = false;
+
+    public string ShortId => Id.ToString()[..8];
 }
